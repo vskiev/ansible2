@@ -1,0 +1,18 @@
+---
+  - name: install ntp
+    yum: name=ntp state=present
+    tags: ntp
+  
+  - name: configure ntp file
+    template: src=ntp.conf.j2  dest=/etc/ntp.conf   
+    tags: ntp
+    notify: restart ntp 
+    
+  - name: start ntp server
+    service: name=ntp state=started enabled=yes
+    tags: ntp
+
+  - name: check selLinux if is running
+    command: getenforce
+    register: sestatus
+    changed_when: false
