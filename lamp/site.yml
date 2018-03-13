@@ -16,6 +16,7 @@
   sudo: yes
   connection: ssh
   gather_facts: no
+
   roles: 
-   - db
+    - db
 
