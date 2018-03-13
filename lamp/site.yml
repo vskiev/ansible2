@@ -6,6 +6,6 @@
    connection: ssh
    gather_facts: yes
 
-   roles:
-     - common
+  # roles:
+  #   - common
   
