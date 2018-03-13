@@ -16,6 +16,8 @@
     command: getenforce
     register: sestatus
   - debug: msg="{{ sestatus }}"
+    when: 
+      sestatus.stdout
     changed_when: false
 
   
