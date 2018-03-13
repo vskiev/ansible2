@@ -10,7 +10,7 @@
      - common
   
  - name: configure database servers
-   hosts: dbserver
+   hosts: DataBase
 
  - roles: 
      - db
