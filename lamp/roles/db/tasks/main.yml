@@ -1,6 +1,5 @@
 ---
  - name: install mysql package
-   hosts: dbserver
    yum: name={{ item }} state=installed
    with_items:
     - mysql-server
