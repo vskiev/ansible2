@@ -10,7 +10,7 @@
      - common
   
  - name: configure database servers
-   hosts: DataBase
+   hosts: dbserver
    user: test
    sudo: yes
    connection: ssh
