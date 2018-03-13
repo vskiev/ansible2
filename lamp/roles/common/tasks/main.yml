@@ -16,3 +16,7 @@
     command: getenforce
     register: sestatus
     changed_when: false
+
+  - debug:
+      var: sestatus
+      verbosity: 2
