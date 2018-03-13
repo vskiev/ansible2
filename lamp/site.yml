@@ -11,6 +11,10 @@
   
  - name: configure database servers
    hosts: DataBase
+   user: test
+   sudo: yes
+   connection: ssh
+   gather_facts: yes
 
  - roles: 
      - db
