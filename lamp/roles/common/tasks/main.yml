@@ -15,8 +15,7 @@
   - name: check selLinux if is running
     command: getenforce
     register: sestatus
+  - debug: msg="{{sestatus}}""
     changed_when: false
 
-  - debug:
-      var: sestatus
-      verbosity: 2
+  
