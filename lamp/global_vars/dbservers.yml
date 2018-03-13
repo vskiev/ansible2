@@ -1,0 +1,6 @@
+---
+ mysqlservie: mysqld
+ mysql_port: 3306
+ dbuser: user1
+ dbname: user1db
+ upassword: abcde

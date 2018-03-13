@@ -1,0 +1,12 @@
+[ControlNode]
+cNode
+
+[LoadBalancer]
+LB
+
+[WebServer]
+WEB1
+WEB2
+
+[DataBase]
+dbserver
