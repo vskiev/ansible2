@@ -1,0 +1,11 @@
+--- #main file
+ - name: apply common configuration to all nodes 
+   hosts: all
+   user: test
+   sudo: yes
+   connection: ssh
+   gather_facts: yes
+
+   roles:
+     - common
+  

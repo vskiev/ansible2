@@ -1,0 +1,4 @@
+---
+  httpd_port: 80
+  ntpserver: 0.ua.pool.ntp.org
+  #repository: https://github.com/bennojoy/mywebapp.git
