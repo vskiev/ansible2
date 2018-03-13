@@ -9,7 +9,7 @@
     notify: restart ntp 
     
   - name: start ntp server
-    service: name=ntp state=started enabled=yes
+    service: name=ntpd state=started enabled=yes
     tags: ntp
 
   - name: check selLinux if is running
