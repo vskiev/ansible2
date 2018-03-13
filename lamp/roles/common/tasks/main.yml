@@ -15,12 +15,8 @@
   - name: check selLinux if is running
     command: getenforce
     register: sestatus
-  #- debug: msg="{{ sestatus }}"
-  - shell: "it works"
-    when: 
-      sestatus.stdout == "Enforcing"
-  - register: out
-  - debug: var=out.stdout_lines  
+  - debug: msg="{{ sestatus }}"
+  - shell: "it works"  
     changed_when: false
 
   
