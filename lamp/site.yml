@@ -9,8 +9,10 @@
    roles:
      - common
   
+
+
  - name: configure database servers
-   hosts: dbserver
+   hosts: DataBase
    user: test
    sudo: yes
    connection: ssh
