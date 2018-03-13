@@ -11,8 +11,7 @@
 
 
  - name: configure database server
-   hosts: 
-     - DataBase
+   hosts: DataBase
    user: test
    sudo: yes
    connection: ssh
