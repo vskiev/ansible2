@@ -9,3 +9,8 @@
    roles:
      - common
   
+ - name: configure database servers
+   hosts: dbserver
+
+ - roles: 
+     - db
