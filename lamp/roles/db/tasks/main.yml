@@ -67,3 +67,7 @@
 
 - name: install mysql repo
   command: /usr/bin/rpm -ivh /tmp/mysql-community-release-el7.rpm
+
+- name: upgrade all packages
+  yum: name='*' state=latest update_cache=yes
+    
