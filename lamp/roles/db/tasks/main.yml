@@ -1,6 +1,4 @@
 ---
-
-
 #  - name: import pgp key from mysql reposytory
 #    rpm_key: key={{ item }} state=present
 #    with_items:
