@@ -1,5 +1,5 @@
 ---
- mysqlservie: mysqld
+ mysqlservice: mariadb
  mysql_port: 3306
  dbuser: user1
  dbname: user1db
