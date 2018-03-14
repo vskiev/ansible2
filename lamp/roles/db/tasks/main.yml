@@ -1,7 +1,5 @@
 ---
-#  - name: upgrade all packages
-#    yum: name='*' state=latest 
-#    register: status
+
 
 #  - name: import pgp key from mysql reposytory
 #    rpm_key: key={{ item }} state=present
@@ -24,6 +22,12 @@
     baseurl: http://repo.mysql.com/mysql-community-release-el7.noarch.rpm
     gpgcheck: yes
     enabled: yes
+
+ - name: upgrade all packages
+   yum: name='*' state=latest 
+   register: status
+
+
 
 #  - name: install mysql package
 #    yum: name={{ item }} state=installed
