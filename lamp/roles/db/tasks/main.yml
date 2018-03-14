@@ -12,18 +12,18 @@
 #       creates: "/etc/yum.repos.d/mysql.repo"
 #     }
 
- - name: install mysql reposytory
-   yum_repository:
-    name: mysql
-    description: mysql server reposytory 
-    gpgkey: http://repo.mysql.com/RPM-GPG-KEY-mysql
-    baseurl: http://repo.mysql.com/mysql-community-release-el7.noarch.rpm
-    gpgcheck: yes
-    enabled: yes
+#  - name: install mysql reposytory
+#    yum_repository:
+#     name: mysql
+#     description: mysql server reposytory 
+#     gpgkey: http://repo.mysql.com/RPM-GPG-KEY-mysql
+#     baseurl: http://repo.mysql.com/mysql-community-release-el7.noarch.rpm
+#     gpgcheck: yes
+#     enabled: yes
 
- - name: upgrade all packages
-   yum: name='*' state=latest 
-   register: status
+#  - name: upgrade all packages
+#    yum: name='*' state=latest 
+#    register: status
 
 
 
@@ -57,3 +57,13 @@
 
 #  - name: create application dbuser
 #    mysql_user: name={{ dbuser }} password={{ upassword }} priv=*.*ALL host='%' state=present
+
+
+
+- name: download mysql repo
+  get_url:
+    url: http://repo.mysql.com/mysql-community-release-el7.rpm
+    dest: /tmp/
+
+- name: install mysql repo
+  command: /usr/bin/rpm -ivh /tmp/mysql-community-release-el7.rpm
