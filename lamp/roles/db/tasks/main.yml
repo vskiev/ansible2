@@ -59,7 +59,6 @@
 #    mysql_user: name={{ dbuser }} password={{ upassword }} priv=*.*ALL host='%' state=present
 
 
-tasks:
   - name: check if installed
     command: yum list | grep mysql-community-release | awk '{print $3}'
     register: result
