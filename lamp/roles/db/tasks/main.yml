@@ -62,7 +62,7 @@
   - name: check if installed
     command: yum list | grep mysql-community-release | awk '{print $3}'
     register: result
-  - debug: msg="{{ result }}"" 
+  - debug: msg="{{ result }}"
 
 # - name: download mysql repo
 #   get_url:
