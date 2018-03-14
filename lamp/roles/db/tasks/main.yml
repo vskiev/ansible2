@@ -59,15 +59,31 @@
 #    mysql_user: name={{ dbuser }} password={{ upassword }} priv=*.*ALL host='%' state=present
 
 
+tasks:
+- name: check if installed
+  command: yum list | grep mysql-community-release | awk '{print $3}'
+  register: result
 
-- name: download mysql repo
-  get_url:
-    url: http://repo.mysql.com/mysql-community-release-el7.rpm
-    dest: /tmp/
+- debug: msg="{{ result }}"" 
 
-- name: install mysql repo
-  command: /usr/bin/rpm -ivh /tmp/mysql-community-release-el7.rpm
+# - name: download mysql repo
+#   get_url:
+#     url: http://repo.mysql.com/mysql-community-release-el7.rpm
+#     dest: /tmp/
+#   when: 
 
-- name: upgrade all packages
-  yum: name='*' state=latest update_cache=yes
-    
+# - name: install mysql repo
+#   command: /usr/bin/rpm -ivh /tmp/mysql-community-release-el7.rpm
+
+# - name: upgrade all packages
+#   yum: name='*' state=latest update_cache=yes
+  #run_once: true
+
+
+# - name: install mysql package
+#   yum: name={{ item }} state=installed
+#   with_items:
+#    - mysql-server
+#    - Mysql-python
+#    - libsellinux-python
+#    - libsemanager-python
