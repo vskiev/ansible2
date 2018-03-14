@@ -1,7 +1,21 @@
 ---
- - name: upgrade all packages
-   yum: name='*' state=latest 
-   
+#  - name: upgrade all packages
+#    yum: name='*' state=latest 
+#    register: status
+
+ - name: import pgp key from mysql reposytory
+   rpm_key: key={{ item }} state=present
+   with_items:
+    - "http://repo.mysql.com/RPM-GPG-KEY-mysql"
+
+ - name: install mysql reposytory
+   command: "rpm -Uhv --force {{ item.href }} creates={{ item.creates }}" 
+   with_items:
+    - {
+      href: "http://repo.mysql.com/mysql-community-release-el7.rpm",
+      creates: "/etc/yum.repos.d/mysql.repo"
+    }
+
  - name: install mysql package
    yum: name={{ item }} state=installed
    with_items:
